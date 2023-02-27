@@ -15,11 +15,13 @@ interface AppDatabaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addAnimeItem(animeItemDbModel: AnimeItemDbModel)
 
-    @Query("SELECT * FROM anime_db WHERE id= :animeItemId")
-    fun getAnimeItem(animeItemId: Int)
-
     @Query("DELETE FROM anime_db WHERE id= :animeItemId LIMIT 1")
-    fun removeAnimeItem(animeItemId: Int): AnimeItemDbModel
+    fun removeAnimeItem(animeItemId: Int)
+
+    @Query("SELECT * FROM anime_db WHERE id= :animeItemId")
+    fun getAnimeItem(animeItemId: Int): AnimeItemDbModel
+
+
 
 
 }
