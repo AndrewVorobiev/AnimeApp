@@ -6,7 +6,7 @@ interface AnimeRepository {
 
     fun addAnimeItem(animeItem: AnimeItem)
     fun editAnimeItem(animeItem: AnimeItem)
-    fun getAnimeItem(animeItemId: Int)
+    fun getAnimeItem(animeItemId: Int): AnimeItem
     fun getAnimeList(): LiveData<List<AnimeItem>>
     fun removeAnimeItem(animeItem: AnimeItem)
 
