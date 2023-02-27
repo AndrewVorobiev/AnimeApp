@@ -12,5 +12,6 @@ data class AnimeItemDbModel(
     val title: String,
     val titleRussian: String,
     val description: String,
-    val year: Int
+    val year: Int,
+    val rating:Int
 )

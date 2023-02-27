@@ -10,7 +10,8 @@ class AnimeListMapper {
         title = animeItem.title,
         titleRussian = animeItem.titleRussian,
         description = animeItem.description,
-        year = animeItem.year
+        year = animeItem.year,
+        rating = animeItem.rating
     )
 
     fun mapDbModelToEntity(animeItemDbModel: AnimeItemDbModel) = AnimeItem(
@@ -19,7 +20,8 @@ class AnimeListMapper {
         title = animeItemDbModel.title,
         titleRussian = animeItemDbModel.titleRussian,
         description = animeItemDbModel.description,
-        year = animeItemDbModel.year
+        year = animeItemDbModel.year,
+        rating = animeItemDbModel.rating
         )
 
     fun mapListDbModeToListEntity(list: List<AnimeItemDbModel>) = list.map {
