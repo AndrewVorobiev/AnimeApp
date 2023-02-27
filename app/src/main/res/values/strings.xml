@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AnimeApp</string>
+    <string name="title_preview">Title preview</string>
+    <string name="rating">Rating</string>
+    <string name="anime_preview">Anime Preview</string>
+    <string name="image_name">Имя фотографии</string>
+    <string name="hint_rating">Рейтинг</string>
 </resources>
