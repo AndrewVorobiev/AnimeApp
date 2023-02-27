@@ -12,15 +12,15 @@ class AnimeRepositoryImpl(application: Application) : AnimeRepository {
     private val mapper = AnimeListMapper()
 
 
-    override fun addAnimeItem(animeItem: AnimeItem) {
+    override suspend fun addAnimeItem(animeItem: AnimeItem) {
         appDatabaseDao.addAnimeItem(mapper.mapEntityToDbModel(animeItem))
     }
 
-    override fun editAnimeItem(animeItem: AnimeItem) {
+    override suspend fun editAnimeItem(animeItem: AnimeItem) {
         appDatabaseDao.addAnimeItem(mapper.mapEntityToDbModel(animeItem))
     }
 
-    override fun getAnimeItem(animeItemId: Int): AnimeItem {
+    override suspend fun getAnimeItem(animeItemId: Int): AnimeItem {
         val dbModel = appDatabaseDao.getAnimeItem(animeItemId)
         return mapper.mapDbModelToEntity(dbModel)
     }
@@ -31,7 +31,7 @@ class AnimeRepositoryImpl(application: Application) : AnimeRepository {
         mapper.mapListDbModeToListEntity(it)
     }
 
-    override fun removeAnimeItem(animeItem: AnimeItem) {
+    override suspend fun removeAnimeItem(animeItem: AnimeItem) {
         appDatabaseDao.removeAnimeItem(animeItem.id)
     }
 }

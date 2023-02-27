@@ -13,13 +13,13 @@ interface AppDatabaseDao {
     fun getAnimeList(): LiveData<List<AnimeItemDbModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addAnimeItem(animeItemDbModel: AnimeItemDbModel)
+    suspend fun addAnimeItem(animeItemDbModel: AnimeItemDbModel)
 
     @Query("DELETE FROM anime_db WHERE id= :animeItemId LIMIT 1")
-    fun removeAnimeItem(animeItemId: Int)
+    suspend fun removeAnimeItem(animeItemId: Int)
 
     @Query("SELECT * FROM anime_db WHERE id= :animeItemId")
-    fun getAnimeItem(animeItemId: Int): AnimeItemDbModel
+    suspend fun getAnimeItem(animeItemId: Int): AnimeItemDbModel
 
 
 
