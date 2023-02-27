@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "anime_db")
-data class AnimeItem(
+data class AnimeItemDbModel(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int,
